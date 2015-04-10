@@ -1,0 +1,56 @@
+
+<div class="row">
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <span class="navbar-brand">Huddle</span>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/">Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="col-sm-4 left-side">
+	<div class="media">
+		<div class="img">
+			<!-- avatar image -->
+			<img src="http://graph.facebook.com/{{profileid}}/picture?type=large" alt="{{username}}" class="avatar">
+		</div>
+		<div class="profile-data">
+			{{username}}
+		</div>
+	</div>
+
+	<div class="field">
+		<textarea class="text" rows="4" cols="10" placeholder="Share an update..." ng-model="message"></textarea>
+	</div>
+
+	<div class="spark-button-div">
+	<button class="btn default full" ng-click="submitMessage()">Update Status</button>
+	</div>
+</div>
+
+<div class="col-sm-8 right-side">
+	<ul class="item-list" ng-repeat="post in posts">
+		<li>
+			<div class="media">
+				<div class="img">
+					<!-- avatar image -->
+					<img src="http://graph.facebook.com/{{post.profileid}}/picture?type=large" alt="{{username}}" class="avatar">
+				</div>
+
+				<div class="body">
+					<p class="title end">{{post.username}}</p>
+					<p class="main-copy pushv">{{post.message}}</p>
+					<p class="meta end">{{post.date | date: 'short'}}</p>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+</div>

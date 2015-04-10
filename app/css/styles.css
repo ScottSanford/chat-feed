@@ -1,0 +1,227 @@
+/******************************************************************
+						Global Styles
+******************************************************************/
+
+body {
+  background-color:#E2E2E1;
+}
+
+@font-face {
+	font-family: 'OpenSans Light';
+	src: url('../fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+	font-family: 'OpenSans Semibold';
+	src: url('../fonts/OpenSans-Semibold.ttf');
+}
+
+@font-face {
+	font-family: 'OpenSans Regular';
+	src: url('../fonts/OpenSans-Regular.ttf');
+}
+
+.container {
+	width:100%;
+	padding-left:0;
+}
+
+/******************************************************************
+			            Media Queries
+******************************************************************/
+
+@media (max-width: @screen-sm) {
+    body {
+    	font-size: 14px;
+    }
+    .user-name {
+    	font-size:12px;
+    }
+}
+
+@media (max-width: @screen-xs) {
+    body{font-size: 10px;}
+}
+
+/******************************************************************
+						Log in Template
+******************************************************************/
+
+.main-logo {
+	width:600px;
+	height:auto;
+	margin:50px auto;
+}
+
+.fa-user, .fa-lock {
+	color:#999C95;
+}
+
+.fa-lock {
+	padding-right:3px;
+}
+
+.input-group {
+	margin-bottom:20px;
+}
+
+.input-group-addon {
+	background-color:#fff;
+}
+
+.form-control {
+	height:55px;
+	font-family: 'OpenSans Regular';
+	font-size:25px;
+	border-radius: 0;
+}
+
+.login-button {
+	height:55px;
+	background-color: #465669;
+	color:#F8F9F9;
+	font-family: 'OpenSans Regular';
+	font-size:30px;
+	margin: 0 auto;
+	padding:0 30px;
+}
+
+.create-account {
+	margin-top:20px;
+	position: relative;
+	left: 22px;
+}
+
+.create-account span {
+}
+
+.create-account a {
+	color:#494948;
+}
+
+.login {
+	-webkit-animation: fadeInUp 1s;
+	-moz-animation: fadeInUp 1s;
+	-o-animation: fadeInUp.1;
+	animation: fadeInUp 1s;
+}
+
+/******************************************************************
+						Chat Feed
+******************************************************************/
+
+.container-fluid {
+	background-color:#465568;
+}
+
+.navbar-brand {
+	padding:15px 30px;
+}
+
+.navbar-default .navbar-brand {
+	color:#f9f9f9;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #f9f9f9;
+}
+
+.left-side {
+	padding-left:50px;
+	padding-right: 0;
+}
+
+.right-side {
+	padding-right:25px;
+}
+
+.media .img {
+	float:left;
+	margin-right:10px;
+}
+
+.avatar {
+  border: 1px solid #9fbe3c;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 64px;
+}
+
+.profile-data {
+	font-size: 30px;
+}
+
+.text {
+  border: 1px solid #9fbe3c;
+  border-radius: 6px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1) inset;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #323031;
+  padding: 12px 16px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.spark-button-div {
+	margin-top:25px;
+}
+
+.btn.default {
+  background: #FDC325;
+  background: -moz-linear-gradient(top, #FDC325, #CB9C1D);
+  background: -ms-linear-gradient(top, #FDC325, #CB9C1D);
+  background: -o-linear-gradient(top, #FDC325, #CB9C1D);
+  background: -webkit-linear-gradient(top, #FDC325, #CB9C1D);
+  background: linear-gradient(top, #FDC325, #CB9C1D);
+  border: 1px solid #AB8319;
+  border-radius: 5px;
+  box-shadow: 0 1px #FED76D inset, 0 1px rgba(0,0,0,0.1);
+  color: #FFF;
+  font-family: 'Proxima Nova Bold', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 11px 100px;
+  text-shadow: 0 -1px rgba(0,0,0,0.25);
+}
+
+.pushv4 {
+	margin-bottom: 40px;
+}
+
+.full {
+	display: block;
+}
+
+.item-list {
+	list-style-type: none;
+}
+
+.item-list li {
+  background: #FFF;
+  border: 1px solid #CCBA8B;
+  border-bottom: 0 none;
+  padding: 10px 15px;
+}
+
+.media .img {
+	float:left;
+}
+
+.media .body {
+	overflow: hidden;
+	margin-bottom: 0;
+}
+
+.main-copy {
+	font-size:21px;
+}
+
+.title {
+	font-size:16px;
+}
+
+.meta {
+	font-size:14px;
+}
+
