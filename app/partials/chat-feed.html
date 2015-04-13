@@ -1,46 +1,48 @@
 
 <div class="row">
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <span class="navbar-brand">Huddle</span>
+      <span class="navbar-brand"><img src="images/heartbeat.png" class="pulse"></span>
     </div>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#/">Logout</a></li>
+        <li><a class="logout-btn" ng-click="logout()">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
 <div class="col-sm-4 left-side">
-	<div class="media">
-		<div class="img">
-			<!-- avatar image -->
-			<img src="http://graph.facebook.com/{{profileid}}/picture?type=large" alt="{{username}}" class="avatar">
+		<div class="media">
+			<div class="img">
+				<!-- avatar image -->
+				<img src="{{facebookprofileid}}" alt="{{username}}" class="avatar" ng-show="{{facebookActive}}">
+				<img src="{{guestprofileid}}" alt="{{username}}" class="avatar" ng-show="{{guestActive}}">
+			</div>
+			<div class="profile-data">
+				{{username}}
+			</div>
 		</div>
-		<div class="profile-data">
-			{{username}}
+
+		<div class="field">
+			<textarea class="text" rows="4" cols="10" placeholder="Share an update..." ng-model="message" maxlength="160"></textarea>
 		</div>
-	</div>
+		<div class="pull-right" ng-show="message">{{160 - message.length}}</div>
 
-	<div class="field">
-		<textarea class="text" rows="4" cols="10" placeholder="Share an update..." ng-model="message"></textarea>
-	</div>
-
-	<div class="spark-button-div">
-	<button class="btn default full" ng-click="submitMessage()">Update Status</button>
-	</div>
+		<div class="spark-button-div">
+			<button class="btn default full" ng-click="submitMessage()" ng-show="message">Update Status</button>
+		</div>
+		<div class="separator"></div>
 </div>
 
 <div class="col-sm-8 right-side">
-	<ul class="item-list" ng-repeat="post in posts">
+	<ul class="item-list posted" ng-repeat="post in posts | orderBy: '-date'"> 
 		<li>
 			<div class="media">
-				<div class="img">
-					<!-- avatar image -->
-					<img src="http://graph.facebook.com/{{post.profileid}}/picture?type=large" alt="{{username}}" class="avatar">
+				<div class="img" ng-switch on="guestActive">
+					<img class="avatar" ng-src="{{post.profileid}}">
 				</div>
 
 				<div class="body">

@@ -4,6 +4,7 @@
 
 body {
   background-color:#E2E2E1;
+  padding-top:70px; /*Bootstrap fixed nav*/
 }
 
 @font-face {
@@ -76,10 +77,25 @@ body {
 	border-radius: 0;
 }
 
-.login-button {
+.facebook-login-button {
 	height:55px;
 	background-color: #465669;
 	color:#F8F9F9;
+	font-family: 'OpenSans Regular';
+	font-size:30px;
+	margin: 0 auto;
+	padding:0 30px;
+}
+
+.or {
+	font-size:24px;
+	padding:15px 0;
+}
+
+.guest-login-button {
+	height:55px;
+	background-color: #E0E1DC;
+	color:#494948;
 	font-family: 'OpenSans Regular';
 	font-size:30px;
 	margin: 0 auto;
@@ -110,12 +126,96 @@ body {
 						Chat Feed
 ******************************************************************/
 
+.pulse {
+	-webkit-animation: pulse 1s linear infinite;
+	-moz-animation: pulse 1s linear infinite;
+	-ms-animation: pulse 1s linear infinite;
+	animation: pulse 1s linear infinite;
+	width: 45px;
+    height: auto;
+    margin-top: -8px;
+}
+}
+
+@keyframes "pulse" {
+ 0% {
+    -webkit-transform: scale(1.1);
+   	-moz-transform: scale(1.1);
+   	-o-transform: scale(1.1);
+   	-ms-transform: scale(1.1);
+   	transform: scale(1.1);
+ }
+ 50% {
+    -webkit-transform: scale(0.8);
+   	-moz-transform: scale(0.8);
+   	-o-transform: scale(0.8);
+   	-ms-transform: scale(0.8);
+   	transform: scale(0.8);
+ }
+ 100% {
+    -webkit-transform: scale(1);
+   	-moz-transform: scale(1);
+   	-o-transform: scale(1);
+   	-ms-transform: scale(1);
+   	transform: scale(1);
+ }
+
+}
+
+@-moz-keyframes pulse {
+ 0% {
+   -moz-transform: scale(1.1);
+   transform: scale(1.1);
+ }
+ 50% {
+   -moz-transform: scale(0.8);
+   transform: scale(0.8);
+ }
+ 100% {
+   -moz-transform: scale(1);
+   transform: scale(1);
+ }
+
+}
+
+@-webkit-keyframes "pulse" {
+ 0% {
+   -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+ }
+ 50% {
+   -webkit-transform: scale(0.8);
+   transform: scale(0.8);
+ }
+ 100% {
+   -webkit-transform: scale(1);
+   transform: scale(1);
+ }
+
+}
+
+@-ms-keyframes "pulse" {
+ 0% {
+   -ms-transform: scale(1.1);
+   transform: scale(1.1);
+ }
+ 50% {
+   -ms-transform: scale(0.8);
+   transform: scale(0.8);
+ }
+ 100% {
+   -ms-transform: scale(1);
+   transform: scale(1);
+ }
+
+}
+
 .container-fluid {
 	background-color:#465568;
 }
 
 .navbar-brand {
-	padding:15px 30px;
+	padding:15px 60px;
 }
 
 .navbar-default .navbar-brand {
@@ -126,9 +226,17 @@ body {
   color: #f9f9f9;
 }
 
+.nav > li > a {
+	padding-right:40px;
+}
+
 .left-side {
 	padding-left:50px;
 	padding-right: 0;
+}
+
+.left-side-wrapper {
+	position: fixed;
 }
 
 .right-side {
@@ -149,6 +257,7 @@ body {
 
 .profile-data {
 	font-size: 30px;
+	width:100%;
 }
 
 .text {
@@ -165,24 +274,28 @@ body {
 }
 
 .spark-button-div {
-	margin-top:25px;
+	margin-top:35px;
+	height:50px;
 }
 
 .btn.default {
-  background: #FDC325;
-  background: -moz-linear-gradient(top, #FDC325, #CB9C1D);
-  background: -ms-linear-gradient(top, #FDC325, #CB9C1D);
-  background: -o-linear-gradient(top, #FDC325, #CB9C1D);
-  background: -webkit-linear-gradient(top, #FDC325, #CB9C1D);
-  background: linear-gradient(top, #FDC325, #CB9C1D);
-  border: 1px solid #AB8319;
+  background: #9fbe3c;
+  border:0;
   border-radius: 5px;
-  box-shadow: 0 1px #FED76D inset, 0 1px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 0 #888985;
   color: #FFF;
   font-family: 'Proxima Nova Bold', Arial, Helvetica, sans-serif;
+  cursor: pointer;
   font-size: 18px;
   padding: 11px 100px;
   text-shadow: 0 -1px rgba(0,0,0,0.25);
+  width:100%;
+  transition:all .1s linear;
+}
+
+.btn.default:active {
+  box-shadow: 0 2px 0 #006599;
+  transform: translateY(3px);
 }
 
 .pushv4 {
@@ -193,14 +306,26 @@ body {
 	display: block;
 }
 
+.full.ng-enter {
+	-webkit-animation: fadeIn 1s;
+	-moz-animation: fadeIn 1s;
+	-o-animation: fadeIn 1s;
+	animation: fadeIn 1s;
+}
+
+.separator {
+	border-top:1px solid #CCC;
+	margin-top:10px;
+}
+
 .item-list {
 	list-style-type: none;
+	margin-top:1px;
 }
 
 .item-list li {
   background: #FFF;
-  border: 1px solid #CCBA8B;
-  border-bottom: 0 none;
+  border: 1px solid #9fbe3c;
   padding: 10px 15px;
 }
 
@@ -215,6 +340,7 @@ body {
 
 .main-copy {
 	font-size:21px;
+	word-wrap:break-word;
 }
 
 .title {
@@ -223,5 +349,12 @@ body {
 
 .meta {
 	font-size:14px;
+}
+
+.posted.ng-enter {
+	-webkit-animation: slideInDown 1.3s;
+	-moz-animation: slideInDown 1.3s;
+	-o-animation: slideInDown 1.3s;
+	animation: slideInDown 1.3s;
 }
 

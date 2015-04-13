@@ -4,13 +4,17 @@ angular.module('chatFeedApp')
 
 		var auth = $firebaseAuth(FBRef);
 		
-		$scope.login = function() {
+		$scope.facebookLogin = function() {
 		  auth.$authWithOAuthPopup("facebook").then(function(authData) {
 		    console.log("Logged in as:", authData);
 		    $location.path('/chat-feed');
-		    $scope.$apply();
+		    // $scope.$apply();
 		  }).catch(function(error) {
 		    console.log("Authentication failed:", error);
 		  });
+		}
+
+		$scope.guestLogin = function() {
+			$location.path('/chat-feed');
 		}
 	}]);

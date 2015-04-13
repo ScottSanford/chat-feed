@@ -1,14 +1,31 @@
-angular.module('chatFeedApp').factory('FacebookService', ['$q', 'ezfb', function ($q, ezfb) {
+angular.module('chatFeedApp').factory('FacebookService', ['$q', 'ezfb', 'PostListService', function ($q, ezfb, PostListService) {
 
-	return function(){
-		 	  // $q.all([
-		    //     ezfb.api('/me')
-		    //   ])
-		    //   .then(function (data) {
-		    //     // Runs after api calls are done
-		    //     console.log(data);
-		    //     return data;
-		    //   });
-	}
+	return {
+
+		profileImage: function() {
+			
+		},
+
+		facebookSubmitMessage: function(message, facebookprofileid, username) {
+			var newPost = {
+				message: message,
+		    	date: Date.now(),
+				profileid: facebookprofileid,
+				username: username
+			}	
+			PostListService.$add(newPost);
+		}, 
+
+		guestSubmitMessage: function(message, guestprofileid, username) {
+			var newPost = {
+				message: message,
+		    	date: Date.now(),
+				profileid: guestprofileid,
+				username: username
+			}	
+			PostListService.$add(newPost);
+		}
+
+}
    
 }]);
