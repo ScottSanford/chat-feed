@@ -2,6 +2,8 @@ angular.module('chatFeedApp')
 
 	.controller('chatFeedCtrl', ['$scope', '$location', 'FBRef', 'PostListService', '$firebaseAuth', 'FacebookService', 'ezfb', function($scope, $location, FBRef, PostListService, $firebaseAuth, FacebookService, ezfb){
 
+		$scope.emojiMessage={};
+
 		var auth = $firebaseAuth(FBRef);
 		var getAuth = auth.$getAuth();
 		$scope.facebookActive = null;
@@ -19,7 +21,6 @@ angular.module('chatFeedApp')
 				console.log(data);
 				var fbprofileId = data.facebook.id;
 				$scope.facebookprofileid = "http://graph.facebook.com/" + fbprofileId + "/picture?type=large";
-				console.log($scope.facebookprofileid);
 			    $scope.username  = data.facebook.displayName;
 			})			
 		}
@@ -31,18 +32,19 @@ angular.module('chatFeedApp')
 
 	    $scope.posts = PostListService;
 
+
 	    $scope.submitMessage = function() {
 	    	
 
 	    	if(getAuth === null) {
 	    		$scope.posts.facebookActive = true;
-				FacebookService.guestSubmitMessage($scope.message, $scope.guestprofileid, $scope.username);   		
+				FacebookService.guestSubmitMessage($scope.emojiMessage.messagetext, $scope.guestprofileid, $scope.username);   		
 	    	} else if (getAuth) {
 	    		$scope.posts.guestActive = true;
-	    		FacebookService.facebookSubmitMessage($scope.message, $scope.facebookprofileid, $scope.username);
+	    		FacebookService.facebookSubmitMessage($scope.emojiMessage.messagetext, $scope.facebookprofileid, $scope.username);
 	    	}
 
-			$scope.message = '';
+			$scope.emojiMessage.rawhtml = '';
 		
 		}
 		

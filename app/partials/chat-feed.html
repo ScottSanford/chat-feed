@@ -26,13 +26,21 @@
 			</div>
 		</div>
 
-		<div class="field">
+<!-- 		<div class="field">
 			<textarea class="text" rows="4" cols="10" placeholder="Share an update..." ng-model="message" maxlength="160"></textarea>
+		</div> -->
+		<div emoji-form emoji-message="emojiMessage" class="message-box">
+		    <textarea id="messageInput" ng-model="emojiMessage.messagetext" rows="4" cols="10" ng-model="messagetext" maxlength="160"></textarea>
+
+		    <button id="emojibtn" class="pull-right">
+		        <i class="icon icon-emoji"></i>
+		    </button>
 		</div>
-		<div class="pull-right" ng-show="message">{{160 - message.length}}</div>
+		<!-- emojis are taking too much space -->
+		<!-- <div class="pull-right" ng-show="emojiMessage.rawhtml">{{160 - emojiMessage.rawhtml.length}}</div> -->
 
 		<div class="spark-button-div">
-			<button class="btn default full" ng-click="submitMessage()" ng-show="message">Update Status</button>
+			<button class="btn default full" ng-click="submitMessage()" ng-show="emojiMessage.rawhtml">Post</button>
 		</div>
 		<div class="separator"></div>
 </div>
@@ -47,7 +55,7 @@
 
 				<div class="body">
 					<p class="title end">{{post.username}}</p>
-					<p class="main-copy pushv">{{post.message}}</p>
+					<p class="main-copy pushv">{{post.message | colonToCode}}</p>
 					<p class="meta end">{{post.date | date: 'short'}}</p>
 				</div>
 			</div>

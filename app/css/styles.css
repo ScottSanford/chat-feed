@@ -71,10 +71,15 @@ body {
 }
 
 .form-control {
-	height:55px;
+	height:100px;
 	font-family: 'OpenSans Regular';
-	font-size:25px;
-	border-radius: 0;
+	font-size:18px;
+	border: 1px solid #9fbe3c;
+	border-radius: 6px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1) inset;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .facebook-login-button {
@@ -274,7 +279,7 @@ body {
 }
 
 .spark-button-div {
-	margin-top:35px;
+	margin-top:70px;
 	height:50px;
 }
 
@@ -287,7 +292,7 @@ body {
   font-family: 'Proxima Nova Bold', Arial, Helvetica, sans-serif;
   cursor: pointer;
   font-size: 18px;
-  padding: 11px 100px;
+  padding: 11px 0;
   text-shadow: 0 -1px rgba(0,0,0,0.25);
   width:100%;
   transition:all .1s linear;
@@ -356,5 +361,13 @@ body {
 	-moz-animation: slideInDown 1.3s;
 	-o-animation: slideInDown 1.3s;
 	animation: slideInDown 1.3s;
+}
+
+.message-box {
+	margin-top:25px;
+}
+
+.emoji-wysiwyg-editor {
+	padding:10px;
 }
 

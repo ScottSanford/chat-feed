@@ -2,6 +2,8 @@ angular.module("chatFeedApp", [
         'firebase',
         'ngRoute', 
         'ngAnimate', 
+        'ngSanitize',
+        'emojiApp',
         'ezfb'
         ])
 
